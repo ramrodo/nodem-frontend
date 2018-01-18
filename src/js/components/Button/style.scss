@@ -1,0 +1,197 @@
+$shadow: 0 2px 4px 0 rgba(103, 108, 103, .3);
+
+@mixin button-variant($bg-color, $color, $border-color: transparent, $bg-hover: '', $hover-color: '') {
+  border-color: $border-color;
+  background-color: $bg-color;
+  color: $color;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    @if $bg-hover != '' {
+      background-color: $bg-hover;
+    } @else {
+      background-color: darken($bg-color, 20%);
+    }
+
+    @if $hover-color != '' {
+      color: $hover-color;
+    } @else {
+      color: $color;
+    }
+
+    text-decoration: none;
+  }
+
+  &:active {
+    box-shadow: $shadow;
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+  transition: background-color .2s ease, color .2s ease, box-shadow .2s ease;
+  margin-bottom: 10px;
+  outline: 0;
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+  background-color:  $darker-gray;
+  background-image: none;
+  cursor: pointer;
+  padding: 0 20px;
+  min-width: 100px;
+  height: $button-height;
+  vertical-align: middle;
+  text-align: center;
+  letter-spacing: .8px;
+  white-space: nowrap;
+  color: $white;
+  font-size: $button-font-size;
+  font-weight: 300;
+  touch-action: manipulation;
+  box-sizing: border-box;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: darken($darker-gray, 10%);
+    text-decoration: none;
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &[disabled] {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+
+  .spinner {
+    display: inline-block;
+    animation: spinner .8s infinite linear;
+    opacity: .8;
+    border: 4px solid $white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+a {
+  &.btn {
+    line-height: $button-height - 2;
+
+    &:visited {
+      color: $white;
+    }
+  }
+}
+
+.btn-primary {
+  @include button-variant($primary-color, $white);
+}
+
+.btn-alt-primary ,
+.btn-primary-outline {
+  @include button-variant(transparent, $primary-color, $primary-color, $primary-color, $white);
+}
+
+.btn-info {
+  @include button-variant($info-color, $white, transparent, $primary-color-hover);
+}
+
+.btn-alt-info {
+  @include button-variant(transparent, $info-color, $info-color);
+
+  border: 1px solid;
+}
+
+.btn-info-outline {
+  @include button-variant(transparent, $info-color, $info-color, $info-color, $white);
+}
+
+.btn-success {
+  @include button-variant($success-color, $white);
+}
+
+.btn-success {
+  @include button-variant($success-color, $white);
+}
+
+.btn-error {
+  @include button-variant($error-color, $white);
+}
+
+.btn-delete-outline {
+  @include button-variant(transparent, $error-color, $error-color, $error-color, $white);
+}
+
+.btn-unstyled {
+  @include button-variant(transparent, $text-color);
+  padding: 0;
+  min-width: auto;
+  text-transform: none;
+  font-size: $font-size;
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.btn-default-outline,
+.btn-default-border {
+  @include button-variant(transparent, $black-gray-light, $black-gray-light);
+}
+
+.btn-create {
+  @include button-variant($success-color, $white);
+  box-shadow: $shadow;
+  background-image: linear-gradient(104deg, $success-color, $success-color-dark);
+
+  span {
+    margin-left: 10px;
+    vertical-align: top;
+  }
+}
+
+.btn-action {
+  @include button-variant($success-color, $white);
+  box-shadow: $shadow;
+  background-image: linear-gradient(104deg, $success-color, $success-color-dark);
+
+  span {
+    vertical-align: top;
+  }
+}
+
+:global(.btn-link) {
+  @include button-variant(transparent, $primary-color);
+
+  border: inherit;
+  background-repeat: no-repeat;
+  padding: inherit;
+  padding-bottom: 13px;
+  overflow: hidden;
+  text-decoration: underline;
+
+  &:active {
+    box-shadow: none;
+  }
+}

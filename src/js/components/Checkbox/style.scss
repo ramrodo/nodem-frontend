@@ -1,0 +1,68 @@
+.checkbox {
+  input {
+    display: none;
+  }
+
+  span {
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  .checkbox-button {
+    display: inline-block;
+    transition: border-color .2s ease;
+    margin: 0 5px;
+    border: 2px solid $base-gray;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      transform: scale(0);
+      transition: opacity .2s ease, transform .3s ease, border-radius .3s ease;
+      opacity: 0;
+      border-radius: 20px;
+      background-color: $primary-color;
+      background-image: url('./assets/checkbox-arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      content: '';
+    }
+
+    &:hover,
+    &.active {
+      border-color: $primary-color;
+    }
+
+    &.active {
+      &::before {
+        transform: scale(1);
+        opacity: 1;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &.disabled {
+    .radio-button {
+      opacity: .6;
+      cursor: not-allowed;
+
+      &:hover {
+        border-color: $base-gray;
+      }
+
+      &.active {
+        border-color: $primary-color;
+      }
+    }
+  }
+}

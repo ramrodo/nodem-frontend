@@ -1,0 +1,167 @@
+$shadow: rgba(0, 0, 0, .2);
+$transition-speed: .2s !default;
+$overlay: rgba(155, 155, 155, .5);
+
+.modal {
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background-color: $overlay;
+  }
+
+  .modal-view {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    padding-bottom: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .over-modal {
+    margin: 30px auto;
+    min-height: 1px;
+    color: $white;
+  }
+
+  .modal-container {
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 9px 0 $shadow;
+    background-color: $white;
+    width: 430px;
+  }
+
+  .modal-header {
+    display: table;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 34px 35px 27px;
+    width: 100%;
+    min-height: 84px;
+    text-align: center;
+    font-size: 1.07em;
+
+    * {
+      color: $black;
+    }
+
+    > div {
+      &:not(.close) {
+        display: table-cell;
+        width: 100%;
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+
+    h1 {
+      margin: 6px 0;
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .close {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      button {
+        z-index: 3;
+        margin: 0;
+        border: 0;
+        padding: 0;
+        width: 80px;
+        min-width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 3px 30px 20px;
+  }
+
+  .modal-footer {
+    display: flex;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: $lightest-gray;
+    padding: 20px 30px;
+
+    .btn {
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  // React Animation
+  .modal-enter {
+    opacity: 0;
+
+    .modal-container {
+      transform: scale(.5);
+    }
+
+    .modal-enter-active {
+      transition: opacity $transition-speed ease;
+      opacity: 1;
+
+      .modal-container {
+        transform: scale(1);
+        transition: transform $transition-speed ease-out;
+      }
+    }
+  }
+
+  .modal-leave {
+    opacity: 1;
+
+    .modal-container {
+      transform: scale(1);
+    }
+
+    .modal-leave-active {
+      transition: opacity $transition-speed ease;
+      opacity: 0;
+
+      .modal-container {
+        transform: scale(.5);
+        transition: transform $transition-speed ease-out;
+      }
+    }
+  }
+}
+
+:global(.no-scroll) {
+  height: 100%;
+  overflow: hidden;
+}
+
+@keyframes step-animation {
+  0% {
+    transform: scale(.9);
+  }
+
+  75% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

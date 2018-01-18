@@ -1,0 +1,49 @@
+.modal-create-plan {
+  font-family: $font-family;
+  font-size: $font-size-small;
+
+  .title-success {
+    h1 {
+      margin-top: 25px;
+    }
+  }
+
+  #max_visitors {
+    padding-right: 70px;
+  }
+
+  .created-error {
+    padding-left: 15px;
+  }
+
+  .plan-type {
+    $color: rgba($black-gray, .75);
+    padding-bottom: 2%;
+    padding-left: 4%;
+    color: $color;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+  }
+
+  .types {
+    padding-top: 15px;
+  }
+
+  .left-footer {
+    margin-right: 20px;
+    width: 150px;
+
+    button {
+      width: 150px;
+    }
+  }
+
+  .right-footer {
+    width: 200px;
+  }
+
+  .close-button {
+    margin: auto;
+    width: 200px;
+  }
+}

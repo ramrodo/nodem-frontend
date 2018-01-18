@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>alert-error</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="80" height="80" rx="40"></rect>
+    </defs>
+    <g id="Clientes-Tablet---Colaboradores-Eliminar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-472.000000, -162.000000)">
+        <g id="Confirmación" transform="translate(297.000000, 127.000000)">
+            <g id="alert-error" transform="translate(175.000000, 35.000000)">
+                <g>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#D72B3F" xlink:href="#path-1"></use>
+                    <path d="M41.345,40.7 L41.075,47.45 L39.275,47.45 L39.005,40.7 L39.005,26.3 L41.345,26.3 L41.345,40.7 Z M41.6375,52.8725 C42.0125019,53.2475019 42.2,53.734997 42.2,54.335 C42.2,54.935003 42.0125019,55.4224981 41.6375,55.7975 C41.2624981,56.1725019 40.775003,56.36 40.175,56.36 C39.574997,56.36 39.0875019,56.1725019 38.7125,55.7975 C38.3374981,55.4224981 38.15,54.935003 38.15,54.335 C38.15,53.734997 38.3374981,53.2475019 38.7125,52.8725 C39.0875019,52.4974981 39.574997,52.31 40.175,52.31 C40.775003,52.31 41.2624981,52.4974981 41.6375,52.8725 Z" id="!" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

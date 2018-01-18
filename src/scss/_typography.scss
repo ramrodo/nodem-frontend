@@ -1,0 +1,23 @@
+a {
+  text-decoration: none;
+  color: $text-color;
+
+  &:visited {
+    color: $text-color;
+  }
+}
+
+:global(a.link, a.href) {
+  text-decoration: underline;
+  color: $primary-color;
+  font-size: $font-size-small;
+  font-weight: 400;
+
+  &:visited {
+    color: $primary-color;
+  }
+}
+
+p {
+  margin: 13px 0;
+}
